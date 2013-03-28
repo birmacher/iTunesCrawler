@@ -6,11 +6,11 @@ require 'itunes_crawler/version'
 Gem::Specification.new do |spec|
   spec.name          = "itunes_crawler"
   spec.version       = ITunesCrawler::VERSION
-  spec.authors       = ["Barnabás Birmacher"]
+  spec.authors       = ["Barnabas Birmacher"]
   spec.email         = ["birmacher@gmail.com"]
-  spec.description   = "iTunes crawler"
-  spec.summary       = "iTunes crawler"
-  spec.homepage      = ""
+  spec.description   = "ITunesCrawler provides an easy way to download the requested iTunes data through Apple's Search API."
+  spec.summary       = "ITunesCrawler provides an easy way to download the requested iTunes data through Apple's Search API."
+  spec.homepage      = "https://github.com/birmacher/iTunesCrawler"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
