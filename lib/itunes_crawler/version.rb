@@ -1,3 +1,3 @@
-module ItunesCrawler
+module ITunesCrawler
   VERSION = "0.0.1"
 end
