@@ -1,24 +1,61 @@
-# ItunesCrawler
+## ITunesCrawler
+[![Build Status](https://travis-ci.org/birmacher/iTunesCrawler.png)](https://travis-ci.org/birmacher/iTunesCrawler)
+[![Code Climate](https://codeclimate.com/github/birmacher/iTunesCrawler.png)](https://codeclimate.com/github/birmacher/iTunesCrawler)
 
-TODO: Write a gem description
+ITunesCrawler provides an easy way to download the requested iTunes data through Apple's Search API.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'itunes_crawler'
+```ruby
+gem 'itunes_crawler'
+```
 
 And then execute:
 
-    $ bundle
+```console
+$ bundle
+```
 
 Or install it yourself as:
 
-    $ gem install itunes_crawler
+```console
+$ gem install itunes_crawler
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+### Download iTunes info for a single app
+
+```ruby
+storefrontFetcher = ITunesCrawler::StorefrontFetcher.new
+storefrontFetcher.on_success { |itunes_item| p itunes_item["trackName"] }
+storefrontFetcher.on_fail { |app_id| p "Nooooooo" }
+storefrontFetcher.fetch( '557137623', 'us' )
+```
+
+### Download iTunes info for multiple apps
+
+```ruby
+storefrontFetcher = ITunesCrawler::StorefrontFetcher.new
+storefrontFetcher.on_success { |itunes_item| p itunes_item["trackName"] }
+storefrontFetcher.on_fail { |app_id| p "Nooooooo" }
+storefrontFetcher.fetch( ['557137623', '284882215'], 'us' )
+```
+
+### Change retry count of failed requests
+
+```ruby
+storefrontFetcher = ITunesCrawler::StorefrontFetcher.new( 1 )
+```
+
+or 
+
+```ruby
+storefrontFetcher = ITunesCrawler::StorefrontFetcher.new
+storefrontFetcher.retry_count = 1
+```
 
 ## Contributing
 

@@ -5,7 +5,7 @@ describe ITunesCrawler::StorefrontFetcher do
     it "one iTunes id" do
       storefrontFetcher = ITunesCrawler::StorefrontFetcher.new
       storefrontFetcher.on_success do |itunes_item|
-        itunes_item.should be_a_kind_of( Object )
+        itunes_item.should be_a_kind_of( Hash )
       end
       storefrontFetcher.on_fail { |itunes_id| fail }
       storefrontFetcher.fetch( '557137623', 'us' )
