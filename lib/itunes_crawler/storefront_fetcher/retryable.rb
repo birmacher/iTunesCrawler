@@ -3,6 +3,8 @@ module ITunesCrawler
 
     module Retryable
       def retryable?(url)
+        return false if @retry_count <= 0
+      
         @failed_urls ||= {}
         
         # It's our first try
